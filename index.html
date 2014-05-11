@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+        <meta name="keywords" content="remark,remarkjs,markdown,slideshow,presentation" />
+        <meta name="description" content="A simple, in-browser, markdown-driven slideshow tool." />
+        <title>Gatling</title>
+        <style type="text/css">
+            @import url(http://fonts.googleapis.com/css?family=Droid+Serif);
+            @import url(http://fonts.googleapis.com/css?family=Yanone+Kaffeesatz);
+
+            @font-face {
+                font-family: 'Mono Social Icons Font';
+                src: url('assets/fonts/MonoSocialIconsFont/MonoSocialIconsFont-1.10.eot');
+                src: url('assets/fonts/MonoSocialIconsFont/MonoSocialIconsFont-1.10.eot?#iefix') format('embedded-opentype'),
+                url('assets/fonts/MonoSocialIconsFont/MonoSocialIconsFont-1.10.woff') format('woff'),
+                url('assets/fonts/MonoSocialIconsFont/MonoSocialIconsFont-1.10.ttf') format('truetype'),
+                url('assets/fonts/MonoSocialIconsFont/MonoSocialIconsFont-1.10.svg#MonoSocialIconsFont') format('svg');
+                src: url('assets/fonts/MonoSocialIconsFont/MonoSocialIconsFont-1.10.ttf') format('truetype');
+                font-weight: normal;
+                font-style: normal;
+            }
+
+            .symbol, a.symbol:before {
+                font-family: 'Mono Social Icons Font';
+                -webkit-text-rendering: optimizeLegibility;
+                -moz-text-rendering: optimizeLegibility;
+                -ms-text-rendering: optimizeLegibility;
+                -o-text-rendering: optimizeLegibility;
+                text-rendering: optimizeLegibility;
+                -webkit-font-smoothing: antialiased;
+                -moz-font-smoothing: antialiased;
+                -ms-font-smoothing: antialiased;
+                -o-font-smoothing: antialiased;
+                font-smoothing: antialiased;
+                font-size: 45px;
+            }
+            .inverse .symbol, .inverse a.symbol:before {
+                color: white;
+            }
+
+            body {
+                font-family: 'Droid Serif';
+                font-size: 20px;
+            }
+            h1, h2, h3 {
+                font-family: 'Yanone Kaffeesatz';
+                font-weight: 400;
+                margin-bottom: 0;
+            }
+            h1 { font-size: 4em; }
+            h2 { font-size: 2em; }
+            h3 { font-size: 1.6em; }
+            .footnote {
+                position: absolute;
+                bottom: 2.5em;
+            }
+            li p { line-height: 1.25em; }
+            .red { color: #fa0000; }
+            .large { font-size: 2em; }
+            a, a > code {
+                color: #ED5C98;
+                text-decoration: none;
+            }
+            .inverse a, .inverse a > code {
+                color: #FEFDF9;
+                text-decoration: none;
+            }
+            code {
+                -moz-border-radius: 5px;
+                -web-border-radius: 5px;
+                background: #e7e8e2;
+                border-radius: 5px;
+                font-size: 16px;
+            }
+            .pull-left {
+                float: left;
+                width: 47%;
+            }
+            .pull-right {
+                float: right;
+                width: 47%;
+            }
+            .centered {
+                text-align: center;
+                vertical-align: middle;
+            }
+            ul {
+                list-style-type: disc;
+                display: inline-block;
+                text-align: left;
+            }
+            .pull-right ~ p {
+                clear: both;
+            }
+            #slideshow .slide .content code {
+                font-size: 0.8em;
+            }
+            #slideshow .slide .content pre code {
+                font-size: 0.9em;
+                padding: 15px;
+            }
+            .inverse {
+                background: #76BAE1;
+                color: #000000;
+                text-shadow: 0 0 20px #333;
+            }
+            .inverse h1, .inverse h2 {
+                color: #FCFBE0;
+                line-height: 0.8em;
+            }
+            .author {
+                position: absolute;
+                bottom: 2.5em;
+                bottom: 12px;
+                left: 20px;
+                opacity: 0.5;
+            }
+
+            /* Slide-specific styling */
+            #slide-gatling .footnote {
+                bottom: 12px;
+                left: 20px;
+                opacity: 0.5;
+            }
+
+            /* Two-column layout */
+            .left-column {
+                color: #777;
+                width: 20%;
+                height: 92%;
+                float: left;
+            }
+            .left-column h2:last-of-type, .left-column h3:last-child {
+                color: #000;
+            }
+            .right-column {
+                width: 75%;
+                float: right;
+                padding-top: 1em;
+            }
+            .mea {
+                color: white;
+                font-weight: bold;
+                text-decoration: underline;
+            }
+        </style>
+    </head>
+    <body>
+        <textarea id="source">
+name: white
+layout: true
+.author[Sébastien Quioc]
+
+---
+
+name: normal
+layout: true
+class: center, middle, inverse
+
+.author[Sébastien Quioc]
+
+---
+
+# Stressez votre serveur avec
+![Gatling project](assets/images/gatling_logo.png)
+## BreizhCamp 2014
+
+???
+
+Gatling, outil de test de charge sous licence Apache 2,
+que j'ai eu à mettre en place en début d'année pour un projet.
+
+---
+class: left, middle
+
+![portrait](assets/images/portrait_manga_circle.png)
+
+## Qui suis-je?
+
+- Architecte solution chez [Niji](http://niji.fr)
+- [.symbol[circletwitterbird] @SQuiOc](https://twitter.com/squioc)
+
+???
+
+Spécialisé dans le Système d'information.
+
+Fais du web de temps en temps
+
+Twitter: outil de veille
+
+Publication d'articles et d'outils intéressant autour des domaines du M2M, Données (Big Data, visualisation de données), Python, Usine logicielle (Continous Deployement, Docker, automatisation de tests, ...)
+
+---
+
+# Sous le capot
+
+---
+
+template: white
+class: middle, center
+
+## DSL
+
+![Scala](assets/images/Scala_logo.png)
+
+.left[
+```scala
+scenario("Standard User")
+  .exec( http("Access Github").get("http://github.com") )
+  .pause(2, 3)
+  .exec( http("Search for 'gatling'")
+            .get("http://github.com/search")
+            .queryParam("q","gatling")
+  )
+  .pause(2)
+  ```
+]
+
+???
+
+DSL basé sur Scala
+
+Projet sous licence Apache 2
+
+---
+
+template: white
+class: middle, center
+
+## Traitements parallèlisés
+
+![Netty](assets/images/Netty_logo.png) &nbsp;&nbsp;&nbsp;&nbsp;
+![Akka](assets/images/Akka_logo.png)
+
+???
+
+Client HTTP basé sur le framework Netty
+
+Parallélisation des actions avec le framework Akka
+
+---
+
+template: white
+class: middle, center
+
+## Graphique
+
+![HighCharts](assets/images/Highcharts_logo.png)
+
+---
+
+# (R)appel
+
+---
+
+template: white
+
+.left-column[
+  ## Scénario
+]
+.right-column[
+## Ensemble d'actions menées par une population d'utilisateurs
+
+Ex: Achat sur un site de e-commerce
+1. Consultation d'un catalogue
+2. Ouverture d'une session
+3. Achat d'un produit
+4. Fermeture de session
+]
+
+???
+
+Ensemble d'actions menées par une population d'utilisateurs
+
+Ex: Achat sur un site de e-commerce
+1. Consultation d'un catalogue
+2. Ouverture d'une session
+3. Achat d'un produit
+4. Fermeture de session
+
+---
+
+template: white
+
+.left-column[
+  ## Scénario
+  ## Simulation
+]
+.right-column[
+## Sélectionne les populations actives et définit leur comportement durant le test
+
+Ex:
+1. inactivité durant 10s
+2. augmentation de 100 utilisateurs/s pendant 10s
+3. plafond de 1000 pendant 1min
+4. descente de 1000 à 0 utilisateurs pendant 20s
+]
+
+???
+
+## Sélectionne les populations actives et définit leur comportement durant le test
+
+Ex:
+1. inactivité durant 10s
+2. augmentation de 100 utilisateurs/s pendant 10s
+3. plafond de 1000 pendant 1min
+4. descente de 1000 à 0 utilisateurs pendant 20s
+
+---
+
+template: white
+
+.left-column[
+  ## Scénario
+  ## Simulation
+  ## Rapport
+]
+.right-column[
+## Synthèse du comportement de l'application testée
+]
+
+???
+
+## Synthèse du comportement de l'application testée
+
+---
+
+# Démo
+
+---
+
+template: white
+
+.left-column[
+  ## Scénarii
+]
+.right-column[
+ ## 3 scénarii
+
+ - les early-bird, achètent leurs billets sans regarder la programmation
+ - les posés, regardent le programme avant de commander
+ - les "pas intéréssé", regardent le programme mais ne commandent rien
+]
+
+???
+
+Ensemble d'actions menées par une population d'utilisateurs
+
+
+---
+
+## A l'assault
+
+![Matrix](assets/images/matrix.gif)
+
+---
+
+template: white
+
+.left-column[
+  ## Aller plus loin
+]
+.right-column[
+- plugin maven
+- plugin Jenkins
+- connecteur Graphite
+]
+
+---
+
+template: white
+
+.left-column[
+  ## La concurrence
+]
+.right-column[
+![Jmeter](assets/images/Jmeter_logo.jpeg)
+
+![Funkload](assets/images/Funkload_logo.png)
+
+![LoadUi](assets/images/Loadui_logo.jpg)
+]
+
+---
+
+# Merci
+
+[.symbol[circlegithubalt] http://github.com/squioc](http://github.com/squioc)
+        </textarea>
+        <script src="assets/javascript/remark-0.6.3.min.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            var hljs = remark.highlighter.engine;
+        </script>
+        <script src="assets/javascript/remark.language.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            var slideshow = remark.create({
+                    highlightStyle: 'monokai',
+                    highlightLanguage: 'remark'
+                }) ;
+        </script>
+    </body>
+</html>
