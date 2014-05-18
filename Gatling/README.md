@@ -6,18 +6,17 @@
     ¿¿¿ conf
     ¿¿¿ lib
     ¿¿¿ user-files
-        ¿¿¿ data
-        ¿   ¿¿¿ earlybirds_credentials.csv       ¿
-        ¿   ¿¿¿ talks.csv                        |  données
-        ¿   ¿¿¿ user_credentials.csv             ¿
+        ¿¿¿ data                                   - données utiles à la simulation
+        ¿   ¿¿¿ earlybirds_credentials.csv
+        ¿   ¿¿¿ talks.csv
+        ¿   ¿¿¿ user_credentials.csv
         ¿¿¿ request-bodies
         ¿¿¿ simulations
             ¿¿¿ BreizhCamp
-                ¿¿¿ BreizhCampSimulation.scala  - simulation
-                ¿¿¿ EarlyBirds.scala            ¿
-                ¿¿¿ QuietUsers.scala            | Scénarii
-                ¿¿¿ Strollers.scala             ¿
-
+                ¿¿¿ BreizhCampSimulation.scala     - la simulation
+                ¿¿¿ EarlyBirds.scala               - scénario des EarlyBird
+                ¿¿¿ QuietUsers.scala               - sénario des utilisateurs posés
+                ¿¿¿ Strollers.scala                - scénario des "pas-intéressé"
 
 ## Execution de la simulation
 
